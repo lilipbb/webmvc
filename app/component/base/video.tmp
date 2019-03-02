@@ -1,0 +1,8 @@
+<tmp $src>
+    <?
+         $src=$this->getAssesAbsUrl(PATH_VIDEO,$src);
+    ?>
+    <video src="{$src}" controls>
+           您的浏览器不支持该视频
+     </video>
+</tmp>

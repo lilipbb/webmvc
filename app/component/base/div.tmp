@@ -1,0 +1,49 @@
+<?
+   function getId($effect){
+   static $id=0;$id++;
+   return $effectid=$id+$effect*10000;
+   }
+?>
+<tmp $effect $src="" $ox="0.5" $oy="0.5" $numx="15" $numy="15" $time="1000">
+    <?$effectid=getId($effect);?>
+    <jquery></jquery>
+    <script src="effect.js"></script>
+    <div {$attr} effectid="div{$effectid}">
+    <?switch($effect):?>
+    <?case 0:?>
+        <div effectid="_back{$effectid}" nohide>
+                <div></div>
+                <div></div>
+                <style>
+                    &{
+                        position:absolute;
+                    div{
+                        background:#eff;
+                        border: 2px solid #58a;
+                        position:absolute;
+                        opacity:0.6;
+                    }
+                    div:nth-child(1){
+                        width:0;height:100%;
+                    left:{$ox};
+                    }
+                    div:nth-child(2){
+                        width:100%;height:0;
+                    top:{$oy};
+                    }
+                    }
+                </style>
+         </div>
+    <?case 1:?>
+
+    <?endswitch?>
+        <?if($src):?>
+            <img src="{$src}" effect>
+        <?endif?>
+        <canvas effect style="margin:auto;left:0;top:0;right:0;bottom:0;"></canvas>
+        <slot></slot>
+        <script>
+            effect_pre_start(querySelectorLast("canvas[effect]"),<?="$effect,$ox,$oy,$numx,$numy,".$time?>,querySelectorLast('[effectid=_back{$effectid}]'));
+        </script>
+    </div>
+</tmp>

@@ -1,0 +1,15 @@
+<tmp ...$_args>
+    <?
+         $slot[0]=trim($slot[0]);
+         if(!$slot[0])return;
+         foreach($_args as $k=>&$v){
+            $$k=&$v;
+         }
+         ob_start();
+         include('str://'.$slot[0]);
+         $str=ob_get_contents();
+         ob_end_clean();
+         $str=$GLOBALS['_tmp']->LoadStr($str);
+         include('str://'.$str);
+    ?>
+</tmp>

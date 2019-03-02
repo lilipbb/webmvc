@@ -1,0 +1,202 @@
+<!DOCTYPE html><html><head >
+        <meta charset="utf-8">
+        <title>彭滨滨的项目介绍</title>
+        <meta name="renderer" content="webkit">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" type="image/x-icon" href="//localhost/favicon.ico" media="screen"/>
+        <script src="//static.hdslb.com/js/jquery.min.js" ></script>
+    <script src="//public-1251891271.cossh.myqcloud.com/js/main.js?1520585300" ></script>
+    <script src="//public-1251891271.cossh.myqcloud.com/js/ajax.js?1551447593" ></script>
+    <link rel="stylesheet" href="//public-1251891271.cossh.myqcloud.com/css/style.css?1521036883" rel="stylesheet"/>    
+                
+<style>hr {
+  height: 10px;
+  border-top: 1px solid black;
+}
+
+.mainitem {
+  margin: 1em;
+  line-height: 2em;
+}
+
+video {
+  width: 100%;
+}
+
+body {
+  background: url(//public-1251891271.cossh.myqcloud.com/images/bg.jpg?1520988966);
+  margin: 0;
+}
+
+.header {
+  position: fixed;
+  display: block;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  background: url(//public-1251891271.cossh.myqcloud.com/images/bg2.jpg?1521005100);
+  height: 50px;
+  z-index: 10;
+}
+
+.header input {
+  position: absolute;
+  box-shadow: 2px 2px 2px #000;
+  height: 36px;
+  margin-top: 7px;
+}
+
+.header input:nth-of-type(1) {
+  left: 30%;
+}
+
+.header input:nth-of-type(2) {
+  right: 30%;
+}
+
+a {
+  color: blue;
+}
+
+#downloadapk {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 800px) {
+  table, tr, td, th {
+    margin: 0;
+    border: 0;
+  }
+  .itemimg {
+    width: 49%;
+  }
+}
+
+@media screen and (min-width: 400px) and (max-width: 800px) {
+  * {
+    font-size: 0.97em;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  * {
+    font-size: 0.93em;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .itemimg {
+    width: 98%;
+  }
+  .data-content {
+    width: 100%;
+  }
+  #chpagep {
+    left: 10%;
+  }
+  #chpagen {
+    right: 10%;
+  }
+}
+</style>
+</head><body><div class="header">
+<input id="chpagep" type="button" value="上一个项目" >
+<input id="chpagen" type="button" value="下一个项目" disabled>
+</div><script>
+    var index=4;
+    chpagep.addEventListener('click',function(){
+        index--;
+        chweb();
+    });
+    chpagen.addEventListener('click',function () {
+       index++;
+       chweb();
+    });
+    function chweb() {
+        location.href="?"+index;
+    }
+</script><div class="content">
+    <div class="data-content">
+        <div data-id="maskoftruth" style="display: block;">
+            <h1 style="margin-top:65px;">webmvc框架、pbb框架</h1>
+            <hr style="border-top:2px solid #333;">
+                            <div>
+                    <br>
+                    <table width="100%" border="2px">
+                        <tr>
+                            <th height="52" scope="row">开 发 环 境</th>
+                            <td>phpstorm、vs、nodejs</td>
+                        </tr>
+                        <tr>
+                            <th height="49" scope="row">项 目 时 间</th>
+                            <td>2016年3月~2016年7月,2018年10月~现在</td>
+                        </tr>
+                        <tr>
+                            <th height="46" scope="row">支 持 功 能</th>
+                            <td>webmvc支持web端，pbb框架可以作为unity、ccc等制作游戏的服务</td>
+                        </tr>
+                        <tr>
+                            <th height="45" scope="row">责 任 描 述</th>
+                            <td>全部为个人开发 </td>
+                        </tr>
+                    </table>
+                    <br><hr><h3>项目介绍</h3>
+                    <div class="mainitem">
+                        <b>一、	webmvc框架(php)功能描述</b><br>
+                        1、支持win和linux，可以一键进行配置。<br>
+                        2、可以将框架整体进行编译成扩展，性能接近c。<br>
+                        3、自己写的php脚本也可以方便的编译成扩展。<br>
+                        4、php脚本实现自动加载。<br>
+                        5、数据库操作非常方便，根据速度要求可以选择安全或者不安全的方法。<br>
+                        6、自己实现了一套前端模板，比tp和laravel更方便、可拓展性也更强，前端可以写出高复用的精简页面。<br>
+                        7、配置一下即可支持多语言。<br>
+                        8、支持typescript和scss。<br>
+                        <b>二、	pbb分布式框架(netcore)功能描述</b><br>
+                        1、支持win和linux，在linux目前已经很稳定了，性能高于java略低于c++。<br>
+                        2、框架整体采用ecs架构，使用组件开发服务器有许多优点。<br>
+                        3、支持单进程部署也支持分布式部署，简单的修改配置就能进行切换，这样在
+                        开发期间的调试将非常迅速。<br>
+                        4、支持服务器逻辑热更新。<br>
+                        5、网络底层使用proto通信，最大限度压缩字节。<br>
+                        6、网络通信部分采用rpc通信，可以一键生成服务器和客户端所需的代码，
+                        无论前端还是后端都可以非常简单快速的进行网络开发。<br>
+                        7、网络通信，访问数据库等费时io操作都采用异步，普通逻辑则运行在主线程，
+                        可以最大限度的提高并发和减少多线程代码的bug。<br>
+                        8、协程c#端采用async,js端采用promise。<br>
+                        9、支持各种广播、客户端和服务器、服务器和服务器间的通信。<br>
+                        10、前端目前支持unity、cocoscreator和egret。<br>
+                        11、数据库支持mysql和mongodb。<br>
+                    </div>
+                </div>
+                            <div><hr>
+                <h3>项目截图</h3>
+                            </div>
+                    </div>
+        <div>
+            <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=542896590&site=qq&menu=yes" style="float:right">
+    <img src="//wpa.qq.com/pa?p=2:542896590:41" border="0" alt="点击这里给我发消息" title="点击这里给我发消息" style="width:80px;"></a>            <hr>
+            <h3>给我发送信息</h3>
+            <div class="comment">
+                <div class="comment-post" style="margin-top:0px;">
+                    <p><input id="comment-post-name" placeholder="请输入名称(可空)" maxlength="20"></p>
+                    <p><textarea id="comment-post-data" placeholder="请输入内容(300字以内)" maxlength="300"></textarea></p>
+                    <p><button id="comment-post-btn">发送</button></p>
+                    <script>
+                        querySelectorLast("button").addEventListener('click',function(){
+                            var title=document.querySelector("#comment-post-name").value;
+                            var mes=document.querySelector("#comment-post-data").value;
+                            if(mes==''){
+                                alert("内容不能为空!");return;
+                            }
+                            if(mes.match(/&/)){alert("内容不能有&符号!");return;}
+                            ajaxPost("sendMail?"+encodeURI(title)+"&"+encodeURI(mes),function(r){
+                                if(r==true)alert('发送成功!');
+                                else alert("发送失败!");
+                            },10000);
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

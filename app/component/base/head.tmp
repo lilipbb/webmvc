@@ -1,0 +1,22 @@
+<tmp $title="丢丢大作战" $keywords="丢丢,大作战,游戏,娱乐,休闲,game,爱米,雷姆,凛,纱雾,诗音" $description="丢丢大作战是非常欢乐的休闲游戏,希望大家能玩的愉快" ie8="true">
+    <head {$attr}>
+        <meta charset="utf-8">
+        <title>{$title}</title>
+        <?if($keywords):?>
+            <meta name="Keywords" content="{$keywords}">
+        <?endif?>
+        <?if($description):?>
+            <meta name="Description" content="{$description}">
+        <?endif?>
+        <meta name="renderer" content="webkit">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" type="image/x-icon" href="//{WEB_NAME}/favicon.ico" media="screen" />
+        <jquery></jquery>
+        <script src="main.js"></script>
+        <script src="ajax.js"></script>
+        <?if($ie8):?>
+            <ie8></ie8>
+        <?endif?>
+        <slot></slot>
+    </head>
+</tmp>

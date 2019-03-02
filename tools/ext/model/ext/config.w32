@@ -1,0 +1,18 @@
+ARG_ENABLE("model", "enable model", "no");
+
+if (PHP_MODEL != "no") {
+  EXTENSION("model", "model.c", null, "-I"+configure_module_dirname);
+  ADD_SOURCES(configure_module_dirname + "/kernel", "main.c memory.c exception.c debug.c backtrace.c object.c array.c string.c fcall.c require.c file.c operators.c math.c concat.c variables.c filter.c iterator.c exit.c time.c", "model");
+  /* PCRE is always included on WIN32 */
+  AC_DEFINE("ZEPHIR_USE_PHP_PCRE", 1, "Whether PHP pcre extension is present at compile time");
+  if (PHP_JSON != "no") {
+    ADD_EXTENSION_DEP("model", "json");
+    AC_DEFINE("ZEPHIR_USE_PHP_JSON", 1, "Whether PHP json extension is present at compile time");
+  }
+  
+  ADD_SOURCES(configure_module_dirname + "/model/pbbdb", "modelbase.zep.c db.zep.c modelall.zep.c", "model");
+	ADD_SOURCES(configure_module_dirname + "/model", "model1.zep.c", "model");
+  ADD_FLAG("CFLAGS_MODEL", "/D ZEPHIR_RELEASE /Oi /Ot /Oy /Ob2 /Gs /GF /Gy /GL");
+  ADD_FLAG("CFLAGS", "/D ZEPHIR_RELEASE /Oi /Ot /Oy /Ob2 /Gs /GF /Gy /GL");
+  ADD_FLAG("LDFLAGS", "/LTCG");
+}

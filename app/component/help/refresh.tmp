@@ -1,0 +1,3 @@
+<tmp $time="10">
+    <meta http-equiv="refresh" content="{$time}">
+</tmp>

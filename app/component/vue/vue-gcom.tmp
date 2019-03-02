@@ -1,0 +1,25 @@
+<!--vue全局组件注册-->
+<tmp tagname="vue-gcom" $vue ...$args>
+    <?
+    $prop='';
+    $slot[0]=preg_replace('@[\r\n]{1,}@','\\\$0',$slot[0]);
+    foreach($args as $k=>$v){
+        if($v===null){
+            $prop.=$k.':{required:true},';
+        }
+        else{
+            if($v!='.'&&$v!='true'&&$v!='false'&&!preg_match('@^\d+$|^\d*\.\d*$@',$v))
+                $v='\''.$v.'\'';
+            $prop.=$k.":{default:".$v."},";
+        }
+    }
+    ?>
+    <script>
+        Vue.component("{$vue}",{
+            props:{
+        {$prop}
+        },
+        template:"{$slot[0]}",
+        });
+    </script>
+</tmp>

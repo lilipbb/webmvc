@@ -1,0 +1,30 @@
+<tmp $src $auto="">
+    <?
+         $src=$this->getAssesAbsUrl(PATH_IMAGES,$src);
+         if($auto===null){
+             $attr.=' auto="'.$src.'"';
+             $src='';
+         }
+    ?>
+    <?if($auto!==''):?>
+        <script once>
+            function LoadScrollImg() {
+                var imgs=document.querySelectorAll('img[auto]');
+                var win=$(window);
+                for(var i=0;i<imgs.length;i++){
+                    var img=$(imgs[i]);
+                    var h=1000;
+                    var top=img.offset().top-win.scrollTop()+h;
+                    var bottom=win.scrollTop()+win.height()-img.offset().top;
+                    if(top>=-h*1.5&&bottom>=-h*1.5){
+                        img.attr('src',img.attr('auto'));
+                        img.attr('auto',null);
+                    }
+                }
+            }
+            window.addEventListener('load',LoadScrollImg);
+            window.addEventListener('scroll',LoadScrollImg);
+        </script>
+    <?endif?>
+    <img src="{$src}" {$attr}>
+</tmp>

@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es5", //defines what sort of code ts generates, es5 because it's what most browsers currently UNDERSTANDS.
+    "module": "amd",
+    "sourceMap": true,
+    "removeComments": false,
+    "noImplicitAny": false,
+    "lib": [
+      "es2016",
+      "dom",
+      "es5"
+    ]
+  }
+}

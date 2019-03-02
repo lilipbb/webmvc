@@ -1,0 +1,7 @@
+<tmp>
+    <?if(DEBUG):?>
+        <script src="//cn.vuejs.org/js/vue.js"></script>
+    <?else:?>
+        <script src="vue.js"></script>
+    <?endif?>
+</tmp>

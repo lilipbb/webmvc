@@ -1,0 +1,4 @@
+﻿先cd 到本目录
+composer config -l -g 获取配置路径
+composer require name 下载组件
+composer update 更新删除组件

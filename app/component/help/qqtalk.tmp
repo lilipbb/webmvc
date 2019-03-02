@@ -1,0 +1,6 @@
+<!--qq为你的qq号-->
+<tmp qq>
+    <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin={$qq}&site=qq&menu=yes" {$attr}>
+    <img border="0" src="http://wpa.qq.com/pa?p=2:{$qq}:41" alt="点击这里给我发消息" title="点击这里给我发消息" style="width:80px;">
+    </a>
+</tmp>

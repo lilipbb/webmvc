@@ -1,0 +1,89 @@
+hr {
+  height: 10px;
+  border-top: 1px solid black;
+}
+
+.mainitem {
+  margin: 1em;
+  line-height: 2em;
+}
+
+video {
+  width: 100%;
+}
+
+body {
+  background: url(//public-1251891271.cossh.myqcloud.com/images/bg.jpg?1520988966);
+  margin: 0;
+}
+
+.header {
+  position: fixed;
+  display: block;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  background: url(//public-1251891271.cossh.myqcloud.com/images/bg2.jpg?1521005100);
+  height: 50px;
+  z-index: 10;
+}
+
+.header input {
+  position: absolute;
+  box-shadow: 2px 2px 2px #000;
+  height: 36px;
+  margin-top: 7px;
+}
+
+.header input:nth-of-type(1) {
+  left: 30%;
+}
+
+.header input:nth-of-type(2) {
+  right: 30%;
+}
+
+a {
+  color: blue;
+}
+
+#downloadapk {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 800px) {
+  table, tr, td, th {
+    margin: 0;
+    border: 0;
+  }
+  .itemimg {
+    width: 49%;
+  }
+}
+
+@media screen and (min-width: 400px) and (max-width: 800px) {
+  * {
+    font-size: 0.97em;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  * {
+    font-size: 0.93em;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .itemimg {
+    width: 98%;
+  }
+  .data-content {
+    width: 100%;
+  }
+  #chpagep {
+    left: 10%;
+  }
+  #chpagen {
+    right: 10%;
+  }
+}

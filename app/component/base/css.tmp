@@ -1,0 +1,9 @@
+<tmp $src="" $href="">
+    <?
+         $src=$src|$href;
+         $src=preg_replace('@(\.sass|\.scss)$@','.css',trim($src));
+         if(substr($src,-4,1)!=='.')$src.='.css';
+         $src=$this->getAssesAbsUrl(PATH_CSS,$src);
+    ?>
+    <link rel="stylesheet" href="{$src}" {$attr}/>
+</tmp>

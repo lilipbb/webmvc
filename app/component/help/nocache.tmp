@@ -1,0 +1,7 @@
+<tmp>
+    <?
+       if(substr($slot[0],0,2)=='<?')
+       echo $slot[0];
+       else echo('<?'.$slot[0].'?>');
+    ?>
+</tmp>

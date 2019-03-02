@@ -1,0 +1,2 @@
+node 出现10106错误的时候 netsh winsock reset
+

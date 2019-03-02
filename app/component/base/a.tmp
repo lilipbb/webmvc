@@ -1,0 +1,14 @@
+<tmp $href>
+    <?
+         if(preg_match('@^\s*#|^\s*javascript\s*:|^\s*mailto:|(http:|https:)//@',$href,$match)){
+            return false;
+         }
+         else if(!$href){
+             $href='javascript:;';
+         }
+         else {
+             $href=$this->getControlAbsUrl($href);
+         }
+    ?>
+    <a href="{$href}" {$attr}><slot></slot></a>
+</tmp>

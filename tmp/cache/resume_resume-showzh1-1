@@ -1,0 +1,227 @@
+<!DOCTYPE html><html><head >
+        <meta charset="utf-8">
+        <title>彭滨滨的项目介绍</title>
+        <meta name="renderer" content="webkit">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" type="image/x-icon" href="//localhost/favicon.ico" media="screen"/>
+        <script src="//static.hdslb.com/js/jquery.min.js" ></script>
+    <script src="//public-1251891271.cossh.myqcloud.com/js/main.js?1520585300" ></script>
+    <script src="//public-1251891271.cossh.myqcloud.com/js/ajax.js?1551447593" ></script>
+    <link rel="stylesheet" href="//public-1251891271.cossh.myqcloud.com/css/style.css?1521036883" rel="stylesheet"/>    
+                
+<style>hr {
+  height: 10px;
+  border-top: 1px solid black;
+}
+
+.mainitem {
+  margin: 1em;
+  line-height: 2em;
+}
+
+video {
+  width: 100%;
+}
+
+body {
+  background: url(//public-1251891271.cossh.myqcloud.com/images/bg.jpg?1520988966);
+  margin: 0;
+}
+
+.header {
+  position: fixed;
+  display: block;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  background: url(//public-1251891271.cossh.myqcloud.com/images/bg2.jpg?1521005100);
+  height: 50px;
+  z-index: 10;
+}
+
+.header input {
+  position: absolute;
+  box-shadow: 2px 2px 2px #000;
+  height: 36px;
+  margin-top: 7px;
+}
+
+.header input:nth-of-type(1) {
+  left: 30%;
+}
+
+.header input:nth-of-type(2) {
+  right: 30%;
+}
+
+a {
+  color: blue;
+}
+
+#downloadapk {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 800px) {
+  table, tr, td, th {
+    margin: 0;
+    border: 0;
+  }
+  .itemimg {
+    width: 49%;
+  }
+}
+
+@media screen and (min-width: 400px) and (max-width: 800px) {
+  * {
+    font-size: 0.97em;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  * {
+    font-size: 0.93em;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .itemimg {
+    width: 98%;
+  }
+  .data-content {
+    width: 100%;
+  }
+  #chpagep {
+    left: 10%;
+  }
+  #chpagen {
+    right: 10%;
+  }
+}
+</style>
+</head><body><div class="header">
+<input id="chpagep" type="button" value="上一个项目" >
+<input id="chpagen" type="button" value="下一个项目" >
+</div><script>
+    var index=1;
+    chpagep.addEventListener('click',function(){
+        index--;
+        chweb();
+    });
+    chpagen.addEventListener('click',function () {
+       index++;
+       chweb();
+    });
+    function chweb() {
+        location.href="?"+index;
+    }
+</script><div class="content">
+    <div class="data-content">
+        <div data-id="maskoftruth" style="display: block;">
+            <h1 style="margin-top:65px;">绘画</h1>
+            <hr style="border-top:2px solid #333;">
+                            <div>
+                    <br>
+                    <table width="100%" border="2px">
+                        <tr>
+                            <th height="52" scope="row">开 发 环 境</th>
+                            <td>Unity5.6、vs2015</td>
+                            <td rowspan="4"><div align="center">
+                                    <script src="//public-1251891271.cossh.myqcloud.com/js/effect.js?1551436464" ></script>
+    <div style="width:186px;height:181px;display:inline-block;cursor: pointer;" onclick="downloadapk.click()" effectid="div10001">
+    <img src="//public-1251891271.cossh.myqcloud.com/images/resume/draw.png?1520902623" effect><canvas effect style="margin:auto;left:0;top:0;right:0;bottom:0;"></canvas>
+        <img src="//public-1251891271.cossh.myqcloud.com/images/resume/draw.png?1520902623" width="186" height="181"><script>
+            effect_pre_start(querySelectorLast("canvas[effect]"),1,0.5,0.5,15,15,3000,querySelectorLast('[effectid=_back10001]'));
+        </script>
+    </div>                                    <br><a id="downloadapk" onclick="location.href='http://apk-1251891271.cossh.myqcloud.com/draw.apk'">android下载</a></div></td>
+                        </tr>
+                        <tr>
+                            <th height="49" scope="row">项 目 时 间</th>
+                            <td>2017年11月~2018年1月</td>
+                        </tr>
+                        <tr>
+                            <th height="46" scope="row">支 持 功 能</th>
+                            <td>绘图、拍照</td>
+                        </tr>
+                        <tr>
+                            <th height="45" scope="row">责 任 描 述</th>
+                            <td>全部为个人开发 </td>
+                        </tr>
+                    </table>
+                    <br><hr><h3>项目介绍</h3>
+                    <div class="mainitem">
+                        <b>一、	总体描述</b><br>
+                        1、工程总体为两个摄像机，其中一个负责绘画、一个负责显示。<br>
+                        2、ui可以自适应，在不同宽高比的机器上会显示不同的ui。<br>
+                        3、总共有5个图层可以进行绘画，可以对某个图层设置照片叠底、相加。<br>
+                        4、图层可以进行复制、合并、删除、显示和整体透明度的调整。<br>
+                        5、由于自带的粒子系统效率太低，这里采用了自己写的粒子系统。<br>
+                        <b>二、	实现功能</b><br>
+                        1、颜色的自由选择，可以采集屏幕上任意点的颜色。<br>
+                        2、画笔的宽度、透明度、笔触的选择。<br>
+                        3、使用直线、曲线、自由进行绘制，其中直线和曲线为linerender、并且可以随时编辑颜色、粗细、类型，自由绘制则是使用粒子点。<br>
+                        4、粒子笔刷，可以使用自定义或者内置的图像进行绘制，可以调整间距、旋转、分散、颜色等。<br>
+                        5、使用填充或者渐变来进行绘制，配合图层的透明度锁定可以做出各种效果、其中渐变使用的颜色为选择的颜色和对应上下的颜色。<br>
+                        6、可以进行文字的插入、可以自由调整粗体斜体。<br>
+                        7、对图层可以进行缩放、移动、旋转。两点同时移动可以拖动整个画布，两点还可以进行整个画布的缩放。<br>
+                        8、支持手机的照相、图库功能。<br>
+                        <b>三、	shader</b><br>
+                        1、按钮的点击效果使用了shader进行整体处理。<br>
+                        2、图层的各自合并方式也使用不同的shader进行计算。<br>
+                        3、图层效果的中透明度的合成采用了屏幕像素，由于屏幕像素的颜色是计算过透明度的，所以这写shader采用了特殊的混合方法。<br>
+                    </div>
+                </div>
+                            <div><hr>
+                <h3>项目截图</h3>
+                                <script once>
+            function LoadScrollImg() {
+                var imgs=document.querySelectorAll('img[auto]');
+                var win=$(window);
+                for(var i=0;i<imgs.length;i++){
+                    var img=$(imgs[i]);
+                    var h=1000;
+                    var top=img.offset().top-win.scrollTop()+h;
+                    var bottom=win.scrollTop()+win.height()-img.offset().top;
+                    if(top>=-h*1.5&&bottom>=-h*1.5){
+                        img.attr('src',img.attr('auto'));
+                        img.attr('auto',null);
+                    }
+                }
+            }
+            window.addEventListener('load',LoadScrollImg);
+            window.addEventListener('scroll',LoadScrollImg);
+        </script><img src="" class="itemimg" auto="//public-1251891271.cossh.myqcloud.com/images/resume/draw/1.jpg?1520991781">                                <img src="" class="itemimg" auto="//public-1251891271.cossh.myqcloud.com/images/resume/draw/2.jpg?1520991787">                            </div>
+                            <div><hr>
+                    <h3>视频介绍</h3>
+                    <video src="//public-1251891271.cossh.myqcloud.com/video/draw.mp4?1521038226" controls>
+           您的浏览器不支持该视频
+     </video>                </div>
+                    </div>
+        <div>
+            <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=542896590&site=qq&menu=yes" style="float:right">
+    <img src="//wpa.qq.com/pa?p=2:542896590:41" border="0" alt="点击这里给我发消息" title="点击这里给我发消息" style="width:80px;"></a>            <hr>
+            <h3>给我发送信息</h3>
+            <div class="comment">
+                <div class="comment-post" style="margin-top:0px;">
+                    <p><input id="comment-post-name" placeholder="请输入名称(可空)" maxlength="20"></p>
+                    <p><textarea id="comment-post-data" placeholder="请输入内容(300字以内)" maxlength="300"></textarea></p>
+                    <p><button id="comment-post-btn">发送</button></p>
+                    <script>
+                        querySelectorLast("button").addEventListener('click',function(){
+                            var title=document.querySelector("#comment-post-name").value;
+                            var mes=document.querySelector("#comment-post-data").value;
+                            if(mes==''){
+                                alert("内容不能为空!");return;
+                            }
+                            if(mes.match(/&/)){alert("内容不能有&符号!");return;}
+                            ajaxPost("sendMail?"+encodeURI(title)+"&"+encodeURI(mes),function(r){
+                                if(r==true)alert('发送成功!');
+                                else alert("发送失败!");
+                            },10000);
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

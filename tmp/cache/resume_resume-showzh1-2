@@ -1,0 +1,268 @@
+<!DOCTYPE html><html><head >
+        <meta charset="utf-8">
+        <title>彭滨滨的项目介绍</title>
+        <meta name="renderer" content="webkit">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" type="image/x-icon" href="//localhost/favicon.ico" media="screen"/>
+        <script src="//static.hdslb.com/js/jquery.min.js" ></script>
+    <script src="//public-1251891271.cossh.myqcloud.com/js/main.js?1520585300" ></script>
+    <script src="//public-1251891271.cossh.myqcloud.com/js/ajax.js?1551447593" ></script>
+    <link rel="stylesheet" href="//public-1251891271.cossh.myqcloud.com/css/style.css?1521036883" rel="stylesheet"/>    
+                
+<style>hr {
+  height: 10px;
+  border-top: 1px solid black;
+}
+
+.mainitem {
+  margin: 1em;
+  line-height: 2em;
+}
+
+video {
+  width: 100%;
+}
+
+body {
+  background: url(//public-1251891271.cossh.myqcloud.com/images/bg.jpg?1520988966);
+  margin: 0;
+}
+
+.header {
+  position: fixed;
+  display: block;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  background: url(//public-1251891271.cossh.myqcloud.com/images/bg2.jpg?1521005100);
+  height: 50px;
+  z-index: 10;
+}
+
+.header input {
+  position: absolute;
+  box-shadow: 2px 2px 2px #000;
+  height: 36px;
+  margin-top: 7px;
+}
+
+.header input:nth-of-type(1) {
+  left: 30%;
+}
+
+.header input:nth-of-type(2) {
+  right: 30%;
+}
+
+a {
+  color: blue;
+}
+
+#downloadapk {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 800px) {
+  table, tr, td, th {
+    margin: 0;
+    border: 0;
+  }
+  .itemimg {
+    width: 49%;
+  }
+}
+
+@media screen and (min-width: 400px) and (max-width: 800px) {
+  * {
+    font-size: 0.97em;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  * {
+    font-size: 0.93em;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .itemimg {
+    width: 98%;
+  }
+  .data-content {
+    width: 100%;
+  }
+  #chpagep {
+    left: 10%;
+  }
+  #chpagen {
+    right: 10%;
+  }
+}
+</style>
+</head><body><div class="header">
+<input id="chpagep" type="button" value="上一个项目" >
+<input id="chpagen" type="button" value="下一个项目" >
+</div><script>
+    var index=2;
+    chpagep.addEventListener('click',function(){
+        index--;
+        chweb();
+    });
+    chpagen.addEventListener('click',function () {
+       index++;
+       chweb();
+    });
+    function chweb() {
+        location.href="?"+index;
+    }
+</script><div class="content">
+    <div class="data-content">
+        <div data-id="maskoftruth" style="display: block;">
+            <h1 style="margin-top:65px;">永恒伊甸园</h1>
+            <hr style="border-top:2px solid #333;">
+                            <div class="noshow">
+                    <br>
+                    <table width="100%" border="2px">
+                        <tr>
+                            <th height="52" scope="row">开 发 环 境</th>
+                            <td>Unity5.0、vs2013</td>
+                            <td rowspan="4"><div align="center">
+                                    <script src="//public-1251891271.cossh.myqcloud.com/js/effect.js?1551436464" ></script>
+    <div style="width:186px;height:181px;display:inline-block;cursor: pointer;" onclick="downloadapk.click()" effectid="div10001">
+    <img src="//public-1251891271.cossh.myqcloud.com/images/resume/yhydy.png?1520903283" effect><canvas effect style="margin:auto;left:0;top:0;right:0;bottom:0;"></canvas>
+        <img src="//public-1251891271.cossh.myqcloud.com/images/resume/yhydy.png?1520903283" style="width:186px;height:181px;"><script>
+            effect_pre_start(querySelectorLast("canvas[effect]"),1,0.5,0.5,15,15,3000,querySelectorLast('[effectid=_back10001]'));
+        </script>
+    </div>                                    <br><a id="downloadapk" onclick="location.href='http://apk-1251891271.cossh.myqcloud.com/永恒伊甸园.apk'">android下载</a></div></td>
+                        </tr>
+                        <tr>
+                            <th height="49" scope="row">项 目 时 间</th>
+                            <td>2015年5月~2016年初</td>
+                        </tr>
+                        <tr>
+                            <th height="46" scope="row">第三方插件</th>
+                            <td>easytouch，dotween和bettertail</td>
+                        </tr>
+                        <tr>
+                            <th height="45" scope="row">服&nbsp;&nbsp;&nbsp;务&nbsp;&nbsp;&nbsp;器</th>
+                            <td>Photon</td>
+                        </tr>
+                    </table>
+                    <br><hr><h3>项目介绍</h3>
+                    <div class="mainitem">
+                        <b>一、	总体系统</b><br>
+                        1、装备系统、背包系统（装备随机附加能力）。<br>
+                        2、商店（使用商店等级来控制卖出的物品的内容）。<br>
+                        3、技能系统(技能主要分为攻击，辅助和被动3方面，技能的学习、装备和等级等)。<br>
+                        4、任务系统（每隔一段时间自动更新，并且会根据游戏内设置的物品自动调整奖励）。<br>
+                        5、对话系统（每个npc的对话和特殊事件的发生）。<br>
+                        6、采集（每个地图拥有自己的采集地点的物品）。<br>
+                        <b>二、	战斗系统</b><br>
+                        1、怪物的基本ai（随机巡逻和寻路，技能的使用等）。<br>
+                        2、怪物的随机生成，除了等级外还分为5个阶级，普通怪，精英怪，超级怪，究级怪和？？？，不同阶段怪物难度和掉落都完全不同。<br>
+                        3、角色的普通连击和技能连击，使用剑类武器普通攻击可以多段。<br>
+                        4、怪物的锁定和视角的自由转动，锁定分为半锁定和全锁定，其中全锁定视角会根据锁定怪物的位置一直变化。<br>
+                        5、魔法的蓄力系统，分为3个等级阶段的蓄力，范围和威力都会变化。<br>
+                        6、武器技能系统，可以通过蓄力但是可以无消耗的释放。<br>
+                        7、打击效果的增强，屏幕背景的明暗，释放技能等屏幕的震动，怪物的击退，击飞等。<br>
+                        <b>三、	网络部分</b><br>
+                        1、帐号的创建和mysql数据库保存。<br>
+                        2、角色和怪物的生成和位置同步。<br>
+                        3、对话大厅。<br>
+                    </div>
+                </div>
+                            <div>
+                    <br>
+                    <table width="100%" border="2px">
+                        <tr>
+                            <th height="52" scope="row">开 发 环 境</th>
+                            <td>androidstudio、live2d</td>
+                        </tr>
+                        <tr>
+                            <th height="49" scope="row">项 目 时 间</th>
+                            <td>2017年3月~2017年4月</td>
+                        </tr>
+                        <tr>
+                            <th height="46" scope="row">支 持 功 能</th>
+                            <td>触摸交互</td>
+                        </tr>
+                        <tr>
+                            <th height="45" scope="row">责 任 描 述</th>
+                            <td>全部为个人开发 </td>
+                        </tr>
+                    </table>
+                    <br><hr><h3>项目介绍</h3>
+                    <div class="mainitem">
+                        <b>一、	总体描述</b><br>
+                        1、一、工程总共有2位动漫人物。<br>
+                        2、使用了ps进行绘图，live2d进行模型和动作的制作。<br>
+                        3、人物有对应的心情，心情低的时候反应在动作上。<br>
+                        <b>二、	实现功能</b><br>
+                        1、可以在屏幕上2根手指进行自由缩放，3根手指进行平移。<br>
+                        2、所有的动作都是复合多个基本动作而成的。<br>
+                        3、摇晃手机人物会有眩晕的动作。<br>
+                        4、可以在设置页面进行触摸，声音，以及分时段切换背景图片的设置。<br>
+                        5、不同时间段的待机动画有所不同。<br>
+                        6、点击不同部位导致心情的变化，变化会在左上角显示。<br>
+                        7、白天、黄昏、夜晚人物整体的渲染会有所变化。<br>
+                        8、触摸屏幕移动人物会注视触摸点。<br>
+                        9、图片和动作的加密解密。<br>
+                        <b>三、	应用场景</b><br>
+                        1、可以用作手机的动态壁纸。<br>
+                        2、可以在游戏里头充当看板娘，增加游戏交互性。<br>
+                    </div>
+                </div>
+                        <div><hr>
+                <h3>项目截图</h3>
+                                <script once>
+            function LoadScrollImg() {
+                var imgs=document.querySelectorAll('img[auto]');
+                var win=$(window);
+                for(var i=0;i<imgs.length;i++){
+                    var img=$(imgs[i]);
+                    var h=1000;
+                    var top=img.offset().top-win.scrollTop()+h;
+                    var bottom=win.scrollTop()+win.height()-img.offset().top;
+                    if(top>=-h*1.5&&bottom>=-h*1.5){
+                        img.attr('src',img.attr('auto'));
+                        img.attr('auto',null);
+                    }
+                }
+            }
+            window.addEventListener('load',LoadScrollImg);
+            window.addEventListener('scroll',LoadScrollImg);
+        </script><img src="" class="itemimg" auto="//public-1251891271.cossh.myqcloud.com/images/resume/yhydy/1.jpg?1520989059">                                <img src="" class="itemimg" auto="//public-1251891271.cossh.myqcloud.com/images/resume/yhydy/2.jpg?1520989063">                                <img src="" class="itemimg" auto="//public-1251891271.cossh.myqcloud.com/images/resume/yhydy/3.jpg?1520989065">                                <img src="" class="itemimg" auto="//public-1251891271.cossh.myqcloud.com/images/resume/yhydy/4.jpg?1520989068">                                <img src="" class="itemimg" auto="//public-1251891271.cossh.myqcloud.com/images/resume/yhydy/5.jpg?1520989071">                                <img src="" class="itemimg" auto="//public-1251891271.cossh.myqcloud.com/images/resume/yhydy/6.jpg?1520989073">                                <img src="" class="itemimg" auto="//public-1251891271.cossh.myqcloud.com/images/resume/yhydy/7.jpg?1520989076">                                <img src="" class="itemimg" auto="//public-1251891271.cossh.myqcloud.com/images/resume/yhydy/8.jpg?1520991212">                            </div>
+                            <div><hr>
+                    <h3>视频介绍</h3>
+                    <video src="//public-1251891271.cossh.myqcloud.com/video/yhydy.mp4?1449307709" controls>
+           您的浏览器不支持该视频
+     </video>                </div>
+                    </div>
+        <div>
+            <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=542896590&site=qq&menu=yes" style="float:right">
+    <img src="//wpa.qq.com/pa?p=2:542896590:41" border="0" alt="点击这里给我发消息" title="点击这里给我发消息" style="width:80px;"></a>            <hr>
+            <h3>给我发送信息</h3>
+            <div class="comment">
+                <div class="comment-post" style="margin-top:0px;">
+                    <p><input id="comment-post-name" placeholder="请输入名称(可空)" maxlength="20"></p>
+                    <p><textarea id="comment-post-data" placeholder="请输入内容(300字以内)" maxlength="300"></textarea></p>
+                    <p><button id="comment-post-btn">发送</button></p>
+                    <script>
+                        querySelectorLast("button").addEventListener('click',function(){
+                            var title=document.querySelector("#comment-post-name").value;
+                            var mes=document.querySelector("#comment-post-data").value;
+                            if(mes==''){
+                                alert("内容不能为空!");return;
+                            }
+                            if(mes.match(/&/)){alert("内容不能有&符号!");return;}
+                            ajaxPost("sendMail?"+encodeURI(title)+"&"+encodeURI(mes),function(r){
+                                if(r==true)alert('发送成功!');
+                                else alert("发送失败!");
+                            },10000);
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

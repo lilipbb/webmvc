@@ -1,0 +1,1 @@
+#_load{animation: myani 1s infinite steps(12);-webkit-animation: myani 1s infinite steps(12);}@keyframes myani{0%{transform: rotate(0)}100%{transform:rotate(360deg)}}@-webkit-keyframes myani{0%{-webkit-transform: rotate(0)}100%{-webkit-transform: rotate(360deg)}}@-o-keyframes myani{0%{transform:  rotate(0)}100%{transform: rotate(360deg)}}

@@ -1,0 +1,233 @@
+﻿使用前需要先进行配置
+对tools/config.php 进行设置。
+public/hotlink 盗链后显示的图片
+
+win：
+安装nodejs（不安装无法使用add-webkit-ms）
+模块全局安装后没有命令检查C:\Users\Administrator\AppData\Roaming\npm是否加入环境变量
+设置NODE_PATH C:\Users\Administrator\AppData\Roaming\npm\node_modules
+重启电脑
+cmd命令：(mac需要在前面加sudo)
+npm install cheerio -g
+npm install md5 -g
+npm install autoprefixer -g
+npm install postcss-cli -g
+npm install typescript -g
+//npm install --save-dev babel-cli -g
+//npm install babel-preset-es2015 -g
+//npm install babel-preset-stage-0 -g
+使用命令：
+postcss -u autoprefixer -o d:/1.css d:/1.css
+//需要把文件移动到babel-cli目录下才行
+//babel src -d dst
+把tools里头mode-debug和init.php拖到 开始.bat 运行
+发布前把add-webkit-ms和mode-work运行
+
+
+linux：
+yum remove php*
+rpm -Uvh https://mirror.webtatic.com/yum/el7/epel-release.rpm
+rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
+
+yum install -y php70w.x86_64 php70w-cli.x86_64 php70w-common.x86_64 php70w-gd.x86_64 php70w-ldap.x86_64 php70w-mbstring.x86_64 php70w-mcrypt.x86_64 php70w-mysql.x86_64 php70w-pdo.x86_64 php70w-fpm
+yum install php70w-devel
+
+yum install -y bzip2
+yum -y install gcc
+yum -y install gcc-c++
+yum -y install make gcc-c++ cmake bison-devel ncurses-devel libaio
+yum install libaio libaio-devel -y
+yum install perl-Data-Dumper -y
+yum install net-tools -y
+yum install expat-devel
+yum -y install python
+yum install freetype*
+yum install gd-devel
+下载apache到linux
+wget -O apache.zip ftp://192.168.1.101/apache.zip
+unzip apache.zip
+cd apache
+gzip -d mysql.tar.gz
+tar xvf mysql.tar
+gzip -d php.tar.gz
+tar xvf php.tar
+gzip -d libxml2.tar.gz
+tar xvf libxml2.tar 
+gzip -d apr.tar.gz
+tar xvf apr.tar 
+gzip -d apr-util.tar.gz
+tar xvf apr-util.tar 
+gzip -d apache.tar.gz
+tar xvf apache.tar 
+gzip -d pcre.tar.gz
+tar xvf pcre.tar
+tar jxf expat-2.2.3.tar.bz2
+
+cd apr-1.6.3
+./configure --prefix=/usr/local/apr
+make && make install
+
+cd ../expat-2.2.3
+./configure --prefix=/usr/local/expat
+make && make install
+
+cd ../apr-util-1.6.1
+./configure --prefix=/usr/local/apr-util --with-apr=/usr/local/apr --with-expat=/usr/local/expat
+make && make install
+
+cd ../pcre-8.41
+./configure --prefix=/usr/local/pcre
+make&&make install
+
+cd ../httpd-2.4.29
+./configure -prefix=/usr/local/apache --with-apr=/usr/local/apr --with-apr-util=/usr/local/apr-util --with-pcre=/usr/local/pcre
+make&&make install
+
+cd ../libxml2-2.9.7
+yum install python-devel
+./configure --prefix=/usr/local/libxml2
+make&&make install
+
+cd ../mysql-5.6.38
+cmake \
+-DCMAKE_INSTALL_PREFIX=/usr/local/mysql \
+-DMYSQL_DATADIR=/usr/local/mysql/data \
+-DSYSCONFDIR=/etc \
+-DWITH_MYISAM_STORAGE_ENGINE=1 \
+-DWITH_INNOBASE_STORAGE_ENGINE=1 \
+-DWITH_MEMORY_STORAGE_ENGINE=1 \
+-DWITH_READLINE=1 \
+-DMYSQL_UNIX_ADDR=/var/lib/mysql/mysql.sock \
+-DMYSQL_TCP_PORT=3306 \
+-DENABLED_LOCAL_INFILE=1 \
+-DWITH_PARTITION_STORAGE_ENGINE=1 \
+-DEXTRA_CHARSETS=all \
+-DDEFAULT_CHARSET=utf8 \
+-DDEFAULT_COLLATION=utf8_general_ci
+make && make install
+useradd -s /sbin/nologin mysql
+chown -R mysql:mysql /usr/local/mysql
+mkdir -p /data/3306/data
+mkdir -p /data/3306/log
+cd /data/3306
+vi my.cnf  添加下面文件
+[client]
+port = 3306
+socket = /data/3306/mysql.sock
+[mysqld]
+port=3306
+socket = /data/3306/mysql.sock
+pid-file = /data/3306/data/mysql.pid
+basedir = /usr/local/mysql
+datadir = /data/3306/data
+server-id=1
+#log-bin=mysql-bin
+#log-bin-index= mysql-bin.index
+# LOGGING
+log_error=/data/3306/log/mysql-error.log
+slow_query_log_file=/data/3306/log/mysql-slow.log
+slow_query_log=1
+
+vi mysql
+#!/bin/sh
+port=3306
+mysql_user="root"
+mysql_pwd=""
+CmdPath="/usr/local/mysql/bin"
+#startup function
+function_start_mysql()
+{
+printf "Starting MySQL...\n"
+/bin/sh ${CmdPath}/mysqld_safe --defaults-file=/data/${port}/my.cnf 2>&1 > /dev/null
+}
+#stop function
+function_stop_mysql()
+{
+printf "Stoping MySQL...\n"
+${CmdPath}/mysqladmin -u ${mysql_user} -p${mysql_pwd} -S /data/${port}/mysql.sock shutdown
+}
+#restart function
+function_restart_mysql()
+{
+printf "Restarting MySQL...\n"
+function_stop_mysql
+sleep 2
+function_start_mysql
+}
+case $1 in
+start)
+function_start_mysql
+;;
+stop)
+function_stop_mysql
+;;
+restart)
+function_restart_mysql
+;;
+*)
+printf "Usage: /data/${port}/mysql {start|stop|restart}\n"
+esac
+
+chown -R mysql:mysql /data
+find /data -name mysql -exec chmod 700 {} \;
+echo 'export PATH=$PATH:/usr/local/mysql/bin' >>/etc/profile
+source /etc/profile
+
+cd /usr/local/mysql/scripts
+./mysql_install_db --defaults-file=/data/3306/my.cnf --user=mysql --basedir=/usr/local/mysql --datadir=/data/3306/data
+防火墙
+firewall-cmd --zone=public --add-port=3306/tcp --permanent success&&firewall-cmd --reload
+启动mysql
+/data/3306/mysql start
+mysql -S /data/3306/mysql.sock
+update user set password=PASSWORD(‘669988Pbb’) where User='root';
+flush privileges;
+ sed -i 's/mysql_pwd=\"\"/mysql_pwd=\"669988Pbb\"/g' /data/3306/mysql
+以后登入就用
+/usr/local/mysql/bin/mysql -S /data/3306/mysql.sock -uroot -p
+
+
+cd ../php-7.2.0
+./configure -prefix=/usr/local/php7 --with-libxml-dir=/usr/local/libxml2 --with-apxs2=/usr/local/apache/bin/apxs
+make&&make install
+cd ext/pdo_mysql
+phpize
+./configure --with-php-config=/usr/local/php7/bin/php-config --with-mysql=mysqlnd  --with-pdo-mysql=mysqlnd --with-pdo-mysql=mysqlnd
+vim /usr/local/php7/lib/php.ini
+cd /usr/local/php7/lib/php/extensions把里头的的pdo_mysql.so路径写入到php.ini里头
+extension=.....pdo_mysql.so
+vim /usr/local/mysql/bin/mysql_config
+把里头的/var/lib/mysql/mysql.sock替换/data/3306/mysql.sock
+/usr/local/apache/bin/apachectl restart
+
+这一块内容可以不安装，安装后支持redis
+$ wget http://download.redis.io/releases/redis-4.0.6.tar.gz
+$ tar xzf redis-4.0.6.tar.gz
+$ cd redis-4.0.6
+$ make
+然后把生成的so文件拷贝到php里头，在php.ini加上扩展
+
+vim /usr/local/apache/conf/httpd.conf
+添加:
+#LoadModule ssl_module modules/mod_ssl.so
+LoadModule php7_module modules/libphp7.so
+搜索DirectoryIndex，在后面添加index.htm default.html default.htm index.php default.php lccee.php phpwamp.php
+找到
+AddType application/x-compress .Z
+AddType application/x-gzip .gz .tgz
+在后面添加
+AddType application/x-httpd-php .php
+AddType application/x-httpd-php-source .php7
+#LoadModule rewrite_module modules/mod_rewrite.so 前面的"#"号去掉
+找到#ServerName 把#去掉，后面改成localhost
+修改User 和 Group
+添加测试文件phpinfo.php到apache/htdocs目录下
+phpinfo.php的内容：
+<?php
+    phpinfo();
+?>
+
+/usr/local/apache/bin/apachectl start
+浏览器中输入localhost或者远程的ip（这是在默认端口80下），出现it works界面就成功
+输入localhost/phpinfo.php 出现界面说明php安装成功
+

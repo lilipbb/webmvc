@@ -1,0 +1,40 @@
+<tmp $src>
+    <?
+    static $srcs=[];
+    static $havets=false;
+    if(!in_array($src,$srcs)){
+        $srcs[]=$src;
+    }
+    else return;
+    $isTs=substr($src,-3)==".ts";
+    if($isTs) {//TS文件需要处理
+        $time=explode("?",$this->getAssesAbsUrl(PATH_TS, $src))[1];
+        $src="ts/".str_replace(".ts","",$src);
+    }
+    else
+        $src=$this->getAssesAbsUrl(PATH_JS,$src);
+    ?>
+    <?if($isTs):?>
+        <?if(!$havets):$havets=true;?>
+            <script src="//{WEB_NAME}/js/require.js"></script>
+            <script>requirejs.config({baseUrl:"//{WEB_NAME}/"});</script>
+        <?endif?>
+        <script>requirejs.config({urlArgs:"{$time}"});</script>
+        <script {$attr}>
+            require(["{$src}"]);
+        </script>
+    <?else:?>
+        <script src="{$src}" {$attr}></script>
+    <?endif?>
+</tmp>
+<tmp $once>
+    <?
+    static $srcs=[];
+    $md5=md5($slot[0]);
+    if(!in_array( $md5,$srcs)){
+        $srcs[]= $md5;
+        return false;
+    }
+    else return;
+    ?>
+</tmp>

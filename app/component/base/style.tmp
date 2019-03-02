@@ -1,0 +1,21 @@
+<tmp $min $max>
+    <style {$attr}>
+       @media screen and (min-width:{$min}px) and (max-width:{$max}px){
+          <slot></slot>
+       }
+    </style>
+</tmp>
+<tmp $min>
+    <style {$attr}>
+        @media screen and (min-width:{$min}px){
+            <slot></slot>
+        }
+    </style>
+</tmp>
+<tmp $max>
+    <style {$attr}>
+        @media screen and (max-width:{$max}px){
+            <slot></slot>
+        }
+    </style>
+</tmp>

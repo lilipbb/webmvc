@@ -1,0 +1,7 @@
+<tmp>
+     <?if(DEBUG):?>
+            <script src="//static.hdslb.com/js/jquery.min.js"></script>
+     <?else:?>
+            <script src="jquery.min.js"></script>
+     <?endif?>
+</tmp>

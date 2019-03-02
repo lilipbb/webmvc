@@ -1,0 +1,17 @@
+<tmp>
+    <?if(LANG_SWITCH):?>
+        <div {$attr}>
+            <?$webf='//'.WEB_NAME.'/';$webb='/'.__CLASS__.'/'.__METHOD__;?>
+            <script>
+                function langchange(lang) {
+                    location.href="{$webf}"+lang+"{$webb}";
+                }
+            </script>
+            <select style="width:100%" onchange="langchange(this.options[this.selectedIndex].value)">
+                <?foreach(LANG_ALL as $k=>$v):if($k==$this->lang)$langmes='selected';else $langmes='';?>
+                    <option value="{$k}" {$langmes}>{$v}</option>
+                <?endforeach?>
+            </select>
+        </div>
+    <?endif?>
+</tmp>

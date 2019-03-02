@@ -1,0 +1,25 @@
+<tmp action="" tagname="form" $method="post" target="" $enctype="multipart/form-data" $callback>
+    <? static $i=0; $tname='i_frame_'.$i++; $action=$this->getControlAbsUrl($action);?>
+    <form action="{$action}" {$attr} method="{$method}" target="_{$tname}" enctype="{$enctype}" {$tname}>
+        <slot></slot>
+        <script>
+            function {$tname}(mes){
+                mes=mes.trim();
+                if(mes!=''){
+                    if(mes.match(/^\[[\s\S]*\]$|^\{[\s\S]*\}$/m))
+                        mes=JSON.parse(mes);
+                    (<?=$callback?>).call(document.querySelector('[{$tname}]'),mes);
+                }
+            }
+        </script>
+        <iframe name="_{$tname}" style="display: none" onload="{$tname}(this.contentWindow.document.body.innerHTML)"></iframe>
+    </form>
+</tmp>
+<tmp action $method="post">
+    <?
+    $action=$this->getControlAbsUrl($action);
+    ?>
+    <form action="{$action}" method="{$method}" {$attr}>
+        <slot></slot>
+    </form>
+</tmp>

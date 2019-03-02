@@ -1,0 +1,231 @@
+<!DOCTYPE html><html><head >
+        <meta charset="utf-8">
+        <title>彭滨滨的项目介绍</title>
+        <meta name="renderer" content="webkit">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" type="image/x-icon" href="//localhost/favicon.ico" media="screen"/>
+        <script src="//static.hdslb.com/js/jquery.min.js" ></script>
+    <script src="//public-1251891271.cossh.myqcloud.com/js/main.js?1520585300" ></script>
+    <script src="//public-1251891271.cossh.myqcloud.com/js/ajax.js?1551447593" ></script>
+    <link rel="stylesheet" href="//public-1251891271.cossh.myqcloud.com/css/style.css?1521036883" rel="stylesheet"/>    
+                
+<style>hr {
+  height: 10px;
+  border-top: 1px solid black;
+}
+
+.mainitem {
+  margin: 1em;
+  line-height: 2em;
+}
+
+video {
+  width: 100%;
+}
+
+body {
+  background: url(//public-1251891271.cossh.myqcloud.com/images/bg.jpg?1520988966);
+  margin: 0;
+}
+
+.header {
+  position: fixed;
+  display: block;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  background: url(//public-1251891271.cossh.myqcloud.com/images/bg2.jpg?1521005100);
+  height: 50px;
+  z-index: 10;
+}
+
+.header input {
+  position: absolute;
+  box-shadow: 2px 2px 2px #000;
+  height: 36px;
+  margin-top: 7px;
+}
+
+.header input:nth-of-type(1) {
+  left: 30%;
+}
+
+.header input:nth-of-type(2) {
+  right: 30%;
+}
+
+a {
+  color: blue;
+}
+
+#downloadapk {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 800px) {
+  table, tr, td, th {
+    margin: 0;
+    border: 0;
+  }
+  .itemimg {
+    width: 49%;
+  }
+}
+
+@media screen and (min-width: 400px) and (max-width: 800px) {
+  * {
+    font-size: 0.97em;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  * {
+    font-size: 0.93em;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .itemimg {
+    width: 98%;
+  }
+  .data-content {
+    width: 100%;
+  }
+  #chpagep {
+    left: 10%;
+  }
+  #chpagen {
+    right: 10%;
+  }
+}
+</style>
+</head><body><div class="header">
+<input id="chpagep" type="button" value="上一个项目" disabled>
+<input id="chpagen" type="button" value="下一个项目" >
+</div><script>
+    var index=0;
+    chpagep.addEventListener('click',function(){
+        index--;
+        chweb();
+    });
+    chpagen.addEventListener('click',function () {
+       index++;
+       chweb();
+    });
+    function chweb() {
+        location.href="?"+index;
+    }
+</script><div class="content">
+    <div class="data-content">
+        <div data-id="maskoftruth" style="display: block;">
+            <h1 style="margin-top:65px;">丢丢大作战</h1>
+            <hr style="border-top:2px solid #333;">
+                        <div>
+                <br>
+                <table width="100%" border="2px">
+                    <tr>
+                        <th height="50" scope="row">开 发 环 境</th>
+                        <td>Unity5.6、androidstudio、xcode</td>
+                        <td rowspan="4"><div align="center">
+                                <script src="//public-1251891271.cossh.myqcloud.com/js/effect.js?1551436464" ></script>
+    <div style="width:186px;height:181px;display:inline-block;cursor:pointer" onclick="downloadapk.click()" effectid="div10001">
+    <img src="//public-1251891271.cossh.myqcloud.com/images/resume/diudiu.png?1520902288" effect><canvas effect style="margin:auto;left:0;top:0;right:0;bottom:0;"></canvas>
+        <img src="//public-1251891271.cossh.myqcloud.com/images/resume/diudiu.png?1520902288" width="186" height="181"><script>
+            effect_pre_start(querySelectorLast("canvas[effect]"),1,0.5,0.5,15,15,3000,querySelectorLast('[effectid=_back10001]'));
+        </script>
+    </div>                         <br><a id="downloadapk" onclick="location.href='http://apk-1251891271.cossh.myqcloud.com/diudiu.apk'">android下载</a></div></td>
+                    </tr>
+                    <tr>
+                        <th height="50" scope="row">项 目 时 间</th>
+                        <td>2017年6月~2017年底</td>
+                    </tr>
+                    <tr>
+                        <th height="50" scope="row">第三方SDK</th>
+                        <td>Trpay、AliceBot、语音识别ASR等</td>
+                    </tr>
+                    <tr>
+                        <th height="50" scope="row">服&nbsp;&nbsp;&nbsp;务&nbsp;&nbsp;&nbsp;器</th>
+                        <td>C#socket、php </td>
+                    </tr>
+                </table>
+                <br><hr><h3>项目介绍</h3>
+                <div class="mainitem">
+                    <b>一、	总体系统</b><br>
+                    1、装备系统、装备图标根据稀有度不同特效不同。<br>
+                    2、每日登入、其中特效使用了mesh动态生成。<br>
+                    3、商店，每隔1h会更新特殊物品、目前充值中的支付宝可以使用、物品里头的动态壁纸也可以下载。<br>
+                    4、多语言（支持中文和英文切换）。<br>
+                    5、热更新（支持ios、更新包括scene、prefeb、audio、pic、scriptobj）。<br>
+                    6、对话输入框（支持语音转文字输入）。<br>
+                    7、物品编辑器。<br>
+                    8、排行榜（每隔10分钟更新一次）。<br>
+                    9、游戏大厅以及npc的智能对话。<br>
+                    <b>二、	服务器</b><br>
+                    1、服务器整体为分布式架构、每个小服务器都有各自的tcp、ip端口，与客户端通信同时采用了短连接和长连接，比如更新服务器就采用长连接。<br>
+                    2、其中的通信层为抽象层，在设置中可以配置后反射加载应用层开发的dll。<br>
+                    3、通信底层采用protobuf和自定义的格式传输、最大限度的压缩了数据大小。<br>
+                    4、使用了动态rsa对关键数据进行加密传输。<br>
+                    5、在unity中生成的单个资源文件大于2Mb的使用了腾讯云进行存储（比如版本）、服务器只把地址传输给客户端进行下载、其它的则服务器直接传输。<br>
+                    6、其中经常变动的数据（比如公告）则在编辑器中编辑后保存成json更新。<br>
+                    7、数据库使用了mysql，配合系统任务会定时进行数据库的备份。<br>
+                    8、服务器使用了智能对话sdk、可以识别中文和英文。<br>
+                    <b>三、	战斗系统</b><br>
+                    1、目前战斗系统正在制作，只完成了基本部分。<br>
+                    2、血条的显示、扣血特效、人物动作、战斗结算等基本完成。<br>
+                    3、物体的破碎和染色。<br>
+                </div>
+            </div>
+                            <div><hr>
+                <h3>项目截图</h3>
+                                <script once>
+            function LoadScrollImg() {
+                var imgs=document.querySelectorAll('img[auto]');
+                var win=$(window);
+                for(var i=0;i<imgs.length;i++){
+                    var img=$(imgs[i]);
+                    var h=1000;
+                    var top=img.offset().top-win.scrollTop()+h;
+                    var bottom=win.scrollTop()+win.height()-img.offset().top;
+                    if(top>=-h*1.5&&bottom>=-h*1.5){
+                        img.attr('src',img.attr('auto'));
+                        img.attr('auto',null);
+                    }
+                }
+            }
+            window.addEventListener('load',LoadScrollImg);
+            window.addEventListener('scroll',LoadScrollImg);
+        </script><img src="" class="itemimg" auto="//public-1251891271.cossh.myqcloud.com/images/resume/diudiu/1.jpg?1520991906">                                <img src="" class="itemimg" auto="//public-1251891271.cossh.myqcloud.com/images/resume/diudiu/10.jpg?1520992029">                                <img src="" class="itemimg" auto="//public-1251891271.cossh.myqcloud.com/images/resume/diudiu/2.jpg?1520991925">                                <img src="" class="itemimg" auto="//public-1251891271.cossh.myqcloud.com/images/resume/diudiu/3.jpg?1520991949">                                <img src="" class="itemimg" auto="//public-1251891271.cossh.myqcloud.com/images/resume/diudiu/4.jpg?1520991954">                                <img src="" class="itemimg" auto="//public-1251891271.cossh.myqcloud.com/images/resume/diudiu/5.jpg?1520991961">                                <img src="" class="itemimg" auto="//public-1251891271.cossh.myqcloud.com/images/resume/diudiu/6.jpg?1520991967">                                <img src="" class="itemimg" auto="//public-1251891271.cossh.myqcloud.com/images/resume/diudiu/7.jpg?1520991982">                                <img src="" class="itemimg" auto="//public-1251891271.cossh.myqcloud.com/images/resume/diudiu/8.jpg?1520992010">                                <img src="" class="itemimg" auto="//public-1251891271.cossh.myqcloud.com/images/resume/diudiu/9.jpg?1520992021">                            </div>
+            <div><hr>
+                <h3>视频介绍</h3>
+                <video src="//public-1251891271.cossh.myqcloud.com/video/diudiu.mp4?1521038050" controls>
+           您的浏览器不支持该视频
+     </video>            </div>
+        </div>
+        <div>
+            <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=542896590&site=qq&menu=yes" style="float:right">
+    <img src="//wpa.qq.com/pa?p=2:542896590:41" border="0" alt="点击这里给我发消息" title="点击这里给我发消息" style="width:80px;"></a>            <hr>
+            <h3>给我发送信息</h3>
+            <div class="comment">
+                <div class="comment-post" style="margin-top:0px;">
+                    <p><input id="comment-post-name" placeholder="请输入名称(可空)" maxlength="20"></p>
+                    <p><textarea id="comment-post-data" placeholder="请输入内容(300字以内)" maxlength="300"></textarea></p>
+                    <p><button id="comment-post-btn">发送</button></p>
+                    <script>
+                        querySelectorLast("button").addEventListener('click',function(){
+                            var title=document.querySelector("#comment-post-name").value;
+                            var mes=document.querySelector("#comment-post-data").value;
+                            if(mes==''){
+                                alert("内容不能为空!");return;
+                            }
+                            if(mes.match(/&/)){alert("内容不能有&符号!");return;}
+                            ajaxPost("sendMail?"+encodeURI(title)+"&"+encodeURI(mes),function(r){
+                                if(r==true)alert('发送成功!');
+                                else alert("发送失败!");
+                            },10000);
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

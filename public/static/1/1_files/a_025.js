@@ -1,0 +1,1 @@
+1===$(".showBar").length&&$.stats.track("\u5e95\u90e8","\u65b0\u7528\u6237\u7ea2\u5305","frs","show"),$("#fixed_bar .close").on("click",function(){$.cookie("fixed_bar",1,{expires:1,path:"/"}),$("#fixed_bar").hide()});

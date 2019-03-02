@@ -1,0 +1,9 @@
+<tmp>
+    <?
+       static $mes=[];
+      if(!in_array($slot[0],$mes)){
+           $mes[]=$slot[0];
+           echo($slot[0]);
+       }
+    ?>
+</tmp>
